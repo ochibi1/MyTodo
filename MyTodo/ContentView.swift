@@ -9,12 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView{
+        NavigationView {
             List {
                 ForEach(0..<5) { (index) in Text("Row \(index)")
                 }
             }
             .navigationBarTitle("今日のやること", displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: {
+                print("新規追加項目画面ができたら、遷移")
+            }, label: {
+                Text("追加")
+            }))
         }
     }
 }
