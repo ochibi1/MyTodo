@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            List {
+                ForEach(0..<5) { (index) in Text("Row \(index)")
+                }
+            }
+            .navigationBarTitle("今日のやること", displayMode: .inline)
+        }
     }
 }
 
