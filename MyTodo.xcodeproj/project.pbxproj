@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58474598254ABB7400AFCE43 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58474597254ABB7400AFCE43 /* DataStore.swift */; };
 		588CDA29254908070086D819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA28254908070086D819 /* AppDelegate.swift */; };
 		588CDA2B254908070086D819 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA2A254908070086D819 /* SceneDelegate.swift */; };
 		588CDA2D254908070086D819 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA2C254908070086D819 /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 		10BFB5DCCF7B29D3A7D09EEA /* Pods-MyTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTodo.debug.xcconfig"; path = "Target Support Files/Pods-MyTodo/Pods-MyTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		1CACF7AAB66C41E592F4EA71 /* Pods-MyTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTodo.release.xcconfig"; path = "Target Support Files/Pods-MyTodo/Pods-MyTodo.release.xcconfig"; sourceTree = "<group>"; };
 		56620DCD0389CD9C6B349E9F /* Pods_MyTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58474597254ABB7400AFCE43 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataStore.swift; path = MyTodo/DataStore.swift; sourceTree = "<group>"; };
 		588CDA25254908070086D819 /* MyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		588CDA28254908070086D819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		588CDA2A254908070086D819 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		588CDA1C254908070086D819 = {
 			isa = PBXGroup;
 			children = (
+				58474597254ABB7400AFCE43 /* DataStore.swift */,
 				588CDA27254908070086D819 /* MyTodo */,
 				588CDA3E2549080A0086D819 /* MyTodoTests */,
 				588CDA492549080A0086D819 /* MyTodoUITests */,
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				588CDA29254908070086D819 /* AppDelegate.swift in Sources */,
+				58474598254ABB7400AFCE43 /* DataStore.swift in Sources */,
 				588CDA2B254908070086D819 /* SceneDelegate.swift in Sources */,
 				588CDA2D254908070086D819 /* ContentView.swift in Sources */,
 			);

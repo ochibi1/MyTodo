@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+    @ObservedObject var taskStore = TaskStore()
     var body: some View {
         NavigationView {
-            List {
-                ForEach(0..<5) { (index) in Text("Row \(index)")
+            List(self.taskStore.tasks) { task in
+                Text(task.toDoItem)
                 }
             }
             .navigationBarTitle("今日のやること", displayMode: .inline)
@@ -22,7 +24,7 @@ struct ContentView: View {
             }))
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
