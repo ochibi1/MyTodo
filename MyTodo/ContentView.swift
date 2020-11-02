@@ -5,29 +5,21 @@
 //  Created by Laflora on 2020/10/28.
 //
 
-import SwiftUI
-import Combine
-
-struct ContentView: View {
-    @ObservedObject var taskStore = TaskStore()
-    var body: some View {
-        NavigationView {
-            List(self.taskStore.tasks) { task in
-                Text(task.toDoItem)
-                }
-            }
-            .navigationBarTitle("今日のやること", displayMode: .inline)
-            .navigationBarItems(trailing: Button(action: {
-                print("新規追加項目画面ができたら、遷移")
-            }, label: {
-                Text("追加")
-            }))
-        }
-    }
+import UIKit
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+class ContentView: UIView {
+    
+    // テーブルを用意して、表示
+    let table: UITableView = UITableView(frame: CGRect(x: 50, y: 50 , width: 200, height: 500))
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        let items = ["aa", "bb", "cc", "ee"]
+        cell.textLabel?.text = items[indexPath.row]
+        return cell
     }
 }
+
+
