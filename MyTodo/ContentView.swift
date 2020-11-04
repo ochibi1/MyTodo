@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ContentView: UIView {
+class ContentView: UITableView {
     
     // テーブルを用意して、表示
     let table: UITableView = UITableView(frame: CGRect(x: 50, y: 50 , width: 200, height: 500))
