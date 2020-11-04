@@ -69,7 +69,9 @@ public class ConstraintMaker {
         return self.makeExtendableWithAttributes(.centerY)
     }
     
-    @available(*, deprecated:3.0, message:"Use lastBaseline instead")
+
+    @available(*, deprecated, message:"Use lastBaseline instead")
+
     public var baseline: ConstraintMakerExtendable {
         return self.makeExtendableWithAttributes(.lastBaseline)
     }
@@ -126,6 +128,11 @@ public class ConstraintMaker {
     public var edges: ConstraintMakerExtendable {
         return self.makeExtendableWithAttributes(.edges)
     }
+
+    public var directionalEdges: ConstraintMakerExtendable {
+        return self.makeExtendableWithAttributes(.directionalEdges)
+    }
+
     public var size: ConstraintMakerExtendable {
         return self.makeExtendableWithAttributes(.size)
     }
@@ -139,6 +146,13 @@ public class ConstraintMaker {
     }
     
     @available(iOS 8.0, *)
+
+    public var directionalMargins: ConstraintMakerExtendable {
+        return self.makeExtendableWithAttributes(.directionalMargins)
+    }
+
+    @available(iOS 8.0, *)
+
     public var centerWithinMargins: ConstraintMakerExtendable {
         return self.makeExtendableWithAttributes(.centerWithinMargins)
     }
