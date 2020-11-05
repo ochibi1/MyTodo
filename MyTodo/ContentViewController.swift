@@ -13,7 +13,9 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         // テーブルに表示させるデータを用意（DBが設計時に漏れていたため、一時的な見た目の確認用）
         var items = ["aa", "bb", "cc", "ee"]
 
-        override func viewDidLoad() {
+        required init?(coder: NSCoder){
+            super.init(coder: <#T##NSCoder#>)
+            
             super.viewDidLoad()
 
             // テーブルを用意して、表示
@@ -22,11 +24,9 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
             table.dataSource = self
             table.delegate = self
             self.view.addSubview(table)
+    
         }
-
-        override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-        }
+    
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
