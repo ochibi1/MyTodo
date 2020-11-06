@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3BF6AE2553FB75007628D4 /* ContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */; };
 		1BF97F28324D629A6384F8B5 /* Pods_MyTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575B9D85F47D3AAD12381C07 /* Pods_MyTodo.framework */; };
 		588CDA29254908070086D819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA28254908070086D819 /* AppDelegate.swift */; };
 		588CDA2B254908070086D819 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA2A254908070086D819 /* SceneDelegate.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewCell.swift; sourceTree = "<group>"; };
 		46440B50F48A8A89B7E3CA8D /* Pods-MyTodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTodoTests.release.xcconfig"; path = "Target Support Files/Pods-MyTodoTests/Pods-MyTodoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A0BC1E89BE10022E0C192C0 /* Pods_MyTodo_MyTodoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTodo_MyTodoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		575B9D85F47D3AAD12381C07 /* Pods_MyTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,13 +124,14 @@
 		588CDA27254908070086D819 /* MyTodo */ = {
 			isa = PBXGroup;
 			children = (
+				588CDA362549080A0086D819 /* Info.plist */,
 				588CDA28254908070086D819 /* AppDelegate.swift */,
-				588CDA2A254908070086D819 /* SceneDelegate.swift */,
+
+				0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */,
 				58F49FC225538EE400986AB8 /* ContentViewController.swift */,
-				58F49FCF2553B09E00986AB8 /* TableViewCell.swift */,
+				588CDA2A254908070086D819 /* SceneDelegate.swift */,
 				588CDA2E2549080A0086D819 /* Assets.xcassets */,
 				588CDA332549080A0086D819 /* LaunchScreen.storyboard */,
-				588CDA362549080A0086D819 /* Info.plist */,
 				588CDA302549080A0086D819 /* Preview Content */,
 			);
 			path = MyTodo;
@@ -423,10 +426,11 @@
 			files = (
 				58F49FC325538EE400986AB8 /* ContentViewController.swift in Sources */,
 				58F49FC82553A1E300986AB8 /* DataStore.swift in Sources */,
+				0F3BF6AE2553FB75007628D4 /* ContentViewCell.swift in Sources */,
 				58B88049254FC158000756B9 /* (null) in Sources */,
 				588CDA29254908070086D819 /* AppDelegate.swift in Sources */,
 				588CDA2B254908070086D819 /* SceneDelegate.swift in Sources */,
-				58F49FD02553B09E00986AB8 /* TableViewCell.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
