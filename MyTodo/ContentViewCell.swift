@@ -25,9 +25,8 @@ class ContentViewCell: UITableViewCell {
         
         self.contentView.snp.makeConstraints { make in
             make.bottom.equalTo(self.label.snp.bottom)
-            make.top.equalToSuperview()
-            make.left.equalToSuperview().offset(10)
-            make.right.equalToSuperview()
+            make.top.right.equalToSuperview()
+            make.left.equalTo(10)
         }
     }
     
