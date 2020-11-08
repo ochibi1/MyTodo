@@ -19,14 +19,14 @@ class ContentViewCell: UITableViewCell {
 
         self.label.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.left.right.equalTo(60.0).inset(10)
+            make.left.equalTo(20.0)
+            make.right.equalToSuperview().inset(20.0)
             make.height.equalTo(40.0)
         }
         
         self.contentView.snp.makeConstraints { make in
             make.bottom.equalTo(self.label.snp.bottom)
-            make.top.right.equalToSuperview()
-            make.left.equalTo(10)
+            make.top.left.right.equalToSuperview()
         }
     }
     

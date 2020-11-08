@@ -19,7 +19,6 @@
 		58B88049254FC158000756B9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		58F49FC325538EE400986AB8 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F49FC225538EE400986AB8 /* ContentViewController.swift */; };
 		58F49FC82553A1E300986AB8 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F49FC72553A1E300986AB8 /* DataStore.swift */; };
-		58F49FD02553B09E00986AB8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F49FCF2553B09E00986AB8 /* TableViewCell.swift */; };
 		928A3518B7B61C357707500B /* Pods_MyTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA8252DD97BBEABA576FE59 /* Pods_MyTodoTests.framework */; };
 		B7F1C1BAAFC2CBF6D496B164 /* Pods_MyTodo_MyTodoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0BC1E89BE10022E0C192C0 /* Pods_MyTodo_MyTodoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		588CDA4C2549080A0086D819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58F49FC225538EE400986AB8 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		58F49FC72553A1E300986AB8 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStore.swift; path = MyTodo/DataStore.swift; sourceTree = "<group>"; };
-		58F49FCF2553B09E00986AB8 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		5AA8252DD97BBEABA576FE59 /* Pods_MyTodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9134ACF0146BE1F99E8BB6D4 /* Pods-MyTodo-MyTodoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTodo-MyTodoUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyTodo-MyTodoUITests/Pods-MyTodo-MyTodoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB0148F59A006242A615A914 /* Pods-MyTodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTodoTests.debug.xcconfig"; path = "Target Support Files/Pods-MyTodoTests/Pods-MyTodoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				588CDA362549080A0086D819 /* Info.plist */,
 				588CDA28254908070086D819 /* AppDelegate.swift */,
-
 				0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */,
 				58F49FC225538EE400986AB8 /* ContentViewController.swift */,
 				588CDA2A254908070086D819 /* SceneDelegate.swift */,
@@ -430,7 +427,6 @@
 				58B88049254FC158000756B9 /* (null) in Sources */,
 				588CDA29254908070086D819 /* AppDelegate.swift in Sources */,
 				588CDA2B254908070086D819 /* SceneDelegate.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
