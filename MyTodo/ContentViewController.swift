@@ -13,10 +13,16 @@ class ContentViewController: UIViewController {
         
     // テーブルに表示させるデータを用意（DBが設計時に漏れていたため、一時的な見た目の確認用）
     var items = ["aa", "bb", "cc", "ee"]
+    //ナビゲーションバーの右上設置ボタンの用意
+    var addBtn: UIBarButtonItem!
 
     init(){
         //self　を使うために必要な親のイニシャライザ呼び出し
         super.init(nibName: nil, bundle: nil)
+        //ボタンの設置
+        addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: Selector(("onClick")))
+        self.navigationItem.rightBarButtonItem = addBtn
+        self.title = "今日やること"
 
         // テーブルを用意して、表示
         let table: UITableView = UITableView(frame: .zero)
@@ -31,6 +37,12 @@ class ContentViewController: UIViewController {
             make.top.left.bottom.right.equalToSuperview()
         }
         
+    }
+    
+    //addBtnをクリックした時のアクション
+    func onClick() {
+        let second = addItemViewController()
+        self.navigationController?.pushViewController(second, animated: true)
     }
 
 //IBを使わない分、「ここを呼び出したらエラーにしますよ」のお約束
