@@ -17,6 +17,9 @@ class ContentViewController: UIViewController {
     init(){
         //self　を使うために必要な親のイニシャライザ呼び出し
         super.init(nibName: nil, bundle: nil)
+        //ボタンの設置
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: Selector(("onClick")))
+        self.title = "今日やること"
 
         // テーブルを用意して、表示
         let table: UITableView = UITableView(frame: .zero)
@@ -31,6 +34,11 @@ class ContentViewController: UIViewController {
             make.top.left.bottom.right.equalToSuperview()
         }
         
+    }
+    
+    //addBtnをクリックした時のアクション
+    @objc func onClick() {
+        self.navigationController?.pushViewController(ItemAddViewController(), animated: true)
     }
 
 //IBを使わない分、「ここを呼び出したらエラーにしますよ」のお約束
