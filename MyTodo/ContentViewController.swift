@@ -38,8 +38,7 @@ class ContentViewController: UIViewController {
     
     //addBtnをクリックした時のアクション
     @objc func onClick() {
-        let second = ItemAddViewController()
-        self.navigationController?.pushViewController(second, animated: true)
+        self.navigationController?.pushViewController(ItemAddViewController(), animated: true)
     }
 
 //IBを使わない分、「ここを呼び出したらエラーにしますよ」のお約束
