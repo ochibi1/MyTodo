@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ItemAddViewController.swift
 //  MyTodo
 //
 //  Created by Laflora on 2020/11/09.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class addItemViewController: UIViewController {
+class ItemAddViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

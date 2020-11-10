@@ -18,9 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Use a ContentViewController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
+            self.window = UIWindow(windowScene: windowScene)
             self.window?.rootViewController = UINavigationController(rootViewController: ContentViewController())
-            window.makeKeyAndVisible()
+            window?.makeKeyAndVisible()
         }
     }
 
