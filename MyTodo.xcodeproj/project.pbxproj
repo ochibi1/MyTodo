@@ -18,6 +18,7 @@
 		588CDA402549080A0086D819 /* MyTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA3F2549080A0086D819 /* MyTodoTests.swift */; };
 		588CDA4B2549080A0086D819 /* MyTodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA4A2549080A0086D819 /* MyTodoUITests.swift */; };
 		58B88049254FC158000756B9 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		58ECDC28255B80360085BF9C /* TaskStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58ECDC26255B80360085BF9C /* TaskStore.xcdatamodeld */; };
 		58F49FC325538EE400986AB8 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F49FC225538EE400986AB8 /* ContentViewController.swift */; };
 		58F49FC82553A1E300986AB8 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F49FC72553A1E300986AB8 /* DataStore.swift */; };
 		928A3518B7B61C357707500B /* Pods_MyTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA8252DD97BBEABA576FE59 /* Pods_MyTodoTests.framework */; };
@@ -60,6 +61,7 @@
 		588CDA462549080A0086D819 /* MyTodoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTodoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		588CDA4A2549080A0086D819 /* MyTodoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTodoUITests.swift; sourceTree = "<group>"; };
 		588CDA4C2549080A0086D819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58ECDC27255B80360085BF9C /* TaskStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskStore.xcdatamodel; sourceTree = "<group>"; };
 		58F49FC225538EE400986AB8 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		58F49FC72553A1E300986AB8 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStore.swift; path = MyTodo/DataStore.swift; sourceTree = "<group>"; };
 		5AA8252DD97BBEABA576FE59 /* Pods_MyTodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */,
 				58F49FC225538EE400986AB8 /* ContentViewController.swift */,
 				587FAE422559306500856F9D /* ItemAddViewController.swift */,
+				58ECDC26255B80360085BF9C /* TaskStore.xcdatamodeld */,
 				588CDA2A254908070086D819 /* SceneDelegate.swift */,
 				588CDA2E2549080A0086D819 /* Assets.xcassets */,
 				588CDA332549080A0086D819 /* LaunchScreen.storyboard */,
@@ -430,6 +433,7 @@
 				58B88049254FC158000756B9 /* (null) in Sources */,
 				587FAE432559306500856F9D /* ItemAddViewController.swift in Sources */,
 				588CDA29254908070086D819 /* AppDelegate.swift in Sources */,
+				58ECDC28255B80360085BF9C /* TaskStore.xcdatamodeld in Sources */,
 				588CDA2B254908070086D819 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -768,6 +772,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		58ECDC26255B80360085BF9C /* TaskStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				58ECDC27255B80360085BF9C /* TaskStore.xcdatamodel */,
+			);
+			currentVersion = 58ECDC27255B80360085BF9C /* TaskStore.xcdatamodel */;
+			path = TaskStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 588CDA1D254908070086D819 /* Project object */;
 }
