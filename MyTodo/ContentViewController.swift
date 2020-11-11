@@ -7,12 +7,13 @@
 
 import UIKit
 import SnapKit
+import CoreData
 
 // プロトコルはextensionで下に分けて記述。
 class ContentViewController: UIViewController {
         
-    // テーブルに表示させるデータを用意（DBが設計時に漏れていたため、一時的な見た目の確認用）
-    var items = ["aa", "bb", "cc", "ee"]
+    // テーブルに表示させるデータの配列
+    var items: [NSString] = []
 
     init(){
         //self　を使うために必要な親のイニシャライザ呼び出し
@@ -33,6 +34,24 @@ class ContentViewController: UIViewController {
         table.snp.makeConstraints { make in
             make.top.left.bottom.right.equalToSuperview()
         }
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // CoreDataからデータを読み込んで配列itemsに格納する
+        let appDel: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let toDoContext: NSManagedObjectContext = appDel.managedObjectContext!
+        let toDoRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+        var results = toDoContext.executeFetchRequest(toDoRequest, error: nil) as [Task]?
+         items = []
+         for data in results {
+             items.append(data.memo)
+         }
+
+         // テーブル情報を更新する
+         self.table.reloadData()
+
         
     }
     
@@ -55,7 +74,7 @@ extension ContentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContentViewCell
         //「このcell作るときは、必ず（!で指定。認識できなかったらエラーにする役割）ContentViewCellとして作られるものとしますからねー！」と先に記述しているから、ContentViewCellクラスのconfigreメソッド（string型のテキスト）が使えているよー
-        cell.configure(items[indexPath.row]) 
+        cell.configure(items[indexPath.row] as String)
         return cell
     }
 
