@@ -14,6 +14,8 @@ class ContentViewController: UIViewController {
         
     // テーブルに表示させるデータの配列
     var items: [NSString] = []
+    
+    static let dataController = NSObject.shared.delegate as! DataController
 
     init(){
         //self　を使うために必要な親のイニシャライザ呼び出し
@@ -39,19 +41,9 @@ class ContentViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // CoreDataからデータを読み込んで配列itemsに格納する
-        let appDel: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let toDoContext: NSManagedObjectContext = appDel.managedObjectContext!
-        let toDoRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-        var results = toDoContext.executeFetchRequest(toDoRequest, error: nil) as [Task]?
-         items = []
-         for data in results {
-             items.append(data.memo)
-         }
-
+        super.viewWillAppear(animated)
          // テーブル情報を更新する
-         self.table.reloadData()
-
+        self.table.reloadData()
         
     }
     
