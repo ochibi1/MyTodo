@@ -14,8 +14,6 @@ class ContentViewController: UIViewController {
         
     // テーブルに表示させるデータの配列
     var items: [NSString] = []
-    
-    static let dataController = NSObject.shared.delegate as! DataController
 
     init(){
         //self　を使うために必要な親のイニシャライザ呼び出し
