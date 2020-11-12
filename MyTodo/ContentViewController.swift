@@ -14,6 +14,8 @@ class ContentViewController: UIViewController {
         
     // テーブルに表示させるデータの配列
     var items: [NSString] = []
+    // テーブルを用意して、表示
+    let table: UITableView = UITableView(frame: .zero)
 
     init(){
         //self　を使うために必要な親のイニシャライザ呼び出し
@@ -22,8 +24,6 @@ class ContentViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: Selector(("onClick")))
         self.title = "今日やること"
 
-        // テーブルを用意して、表示
-        let table: UITableView = UITableView(frame: .zero)
         // cellを作成する時に、UITableViewのインスタンス（ここではtable）をcellのテンプレートにするよ
         table.register(ContentViewCell.self, forCellReuseIdentifier: "cell")
         table.dataSource = self
@@ -40,8 +40,16 @@ class ContentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let fetchRequest = Task.fetchRequest()
+        let data = DataController()
          // テーブル情報を更新する
-        self.table.reloadData()
+        do {
+            items = try data.shared.context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [NSString]
+            self.table.reloadData()
+        }
+        catch {
+            print("Fetching Failed")
+        }
         
     }
     

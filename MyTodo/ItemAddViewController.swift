@@ -10,7 +10,7 @@ import SnapKit
 import CoreData
 
 class ItemAddViewController: UIViewController {
-    let inputField = UITextField(frame: .zero)
+    let inputField: UITextField! = UITextField(frame: .zero)
     let saveBtn = UIButton(frame: .zero)
 
     init() {
@@ -41,14 +41,14 @@ class ItemAddViewController: UIViewController {
     
     }
     
-     //saveBtnを押した時に、CoreDataに保存されるメソッド。モデルに書いた方がよいかも・・・？▶︎CoreDataでのobject生成・保存・読み取りの記述が分かってから修正。
-//    func saveData() {
-//        dataController()
-//        let toDoContext: NSManagedObjectContext = appDel.managedObjectContext!
-//        let toDoEntity: NSEntityDescription! = NSEntityDescription.entity(forEntityName: "Task", in: toDoContext)
-//        var newData = TaskStore(entity: task, insertIntoManagedObjectContext: toDoContext)
-//        newData.input = inputField.text
-//    }
+     //saveBtnを押した時に、CoreDataに保存されるメソッド。
+    func saveData() {
+        //DataControllerの変数contextを介して、createとinsertアクションを使う。（余力があれば・・・・使えたら、入力値消す？か、キーボード隠れる系の何かしらの変化が合った方がよさそう。）
+        let data :DataController = DataController.shared
+        data.create(entityName: "task")
+        data.insert()//ここのカッコに何を入れるのか分からない・・
+       
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
