@@ -13,7 +13,7 @@ import CoreData
 class ContentViewController: UIViewController {
         
     // テーブルに表示させるデータの配列
-    var items: [NSString] = []
+    var items: [Task] = []
     // テーブルを用意して、表示
     let table: UITableView = UITableView(frame: .zero)
 
@@ -21,36 +21,26 @@ class ContentViewController: UIViewController {
         //self　を使うために必要な親のイニシャライザ呼び出し
         super.init(nibName: nil, bundle: nil)
         //ボタンの設置
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: Selector(("onClick")))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.onClick))
         self.title = "今日やること"
 
         // cellを作成する時に、UITableViewのインスタンス（ここではtable）をcellのテンプレートにするよ
-        table.register(ContentViewCell.self, forCellReuseIdentifier: "cell")
-        table.dataSource = self
-        table.delegate = self
+        self.table.register(ContentViewCell.self, forCellReuseIdentifier: "cell")
+        self.table.dataSource = self
+        self.table.delegate = self
         self.view.addSubview(table)
 
         //親クラスのビュー に上下左右合わせるよー
         table.snp.makeConstraints { make in
             make.top.left.bottom.right.equalToSuperview()
         }
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let fetchRequest = Task.fetchRequest()
-        let data = DataController()
+        self.items = Task.fetchAll()
          // テーブル情報を更新する
-        do {
-            items = try data.shared.context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [NSString]
-            self.table.reloadData()
-        }
-        catch {
-            print("Fetching Failed")
-        }
-        
+        self.table.reloadData()
     }
     
     //addBtnをクリックした時のアクション
@@ -72,7 +62,7 @@ extension ContentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContentViewCell
         //「このcell作るときは、必ず（!で指定。認識できなかったらエラーにする役割）ContentViewCellとして作られるものとしますからねー！」と先に記述しているから、ContentViewCellクラスのconfigreメソッド（string型のテキスト）が使えているよー
-        cell.configure(items[indexPath.row] as String)
+        cell.configure(self.items[indexPath.row])
         return cell
     }
 

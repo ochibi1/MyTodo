@@ -18,35 +18,54 @@ class ItemAddViewController: UIViewController {
         self.title = "新規項目追加画面"
         self.view.backgroundColor = UIColor.lightGray
         
-        inputField.borderStyle = UITextField.BorderStyle.roundedRect
+        self.inputField.borderStyle = UITextField.BorderStyle.roundedRect
         self.view.addSubview(inputField)
-        inputField.snp.makeConstraints { make in
+        self.inputField.snp.makeConstraints { make in
             make.top.equalTo(150.0)
             make.height.equalTo(30.0)
             make.left.equalTo(40.0)
             make.right.equalTo(-40.0)
         }
-        inputField.placeholder = "今日のやることを入力"
+        self.inputField.placeholder = "今日のやることを入力"
         
-        saveBtn.setTitle("保存", for: UIControl.State.normal)
-        saveBtn.backgroundColor = UIColor.magenta
+        self.saveBtn.setTitle("保存", for: UIControl.State.normal)
+        self.saveBtn.backgroundColor = UIColor.magenta
         self.view.addSubview(saveBtn)
-        saveBtn.inputField.snp.makeConstraints { make in
-            make.top.equalTo(150.0)
-            make.height.equalToSuperview()
+        self.saveBtn.snp.makeConstraints { make in
+            make.top.equalTo(self.inputField.snp.bottom).offset(50.0)
+            make.height.equalTo(self.inputField.snp.height)
             make.left.right.equalToSuperview().inset(50.0)
             
-        saveBtn.addTarget(self, action: Selector(("saveData")), for: UIControl.Event.touchUpInside)
         }
+        saveBtn.addTarget(self, action: #selector(self.saveData), for: UIControl.Event.touchUpInside)
     
     }
     
-     //saveBtnを押した時に、CoreDataに保存されるメソッド。
-    func saveData() {
-        //DataControllerの変数contextを介して、createとinsertアクションを使う。（余力があれば・・・・使えたら、入力値消す？か、キーボード隠れる系の何かしらの変化が合った方がよさそう。）
-        let data :DataController = DataController.shared
-        data.create(entityName: "task")
-        data.insert()//ここのカッコに何を入れるのか分からない・・
+    //saveBtnを押した時に、CoreDataに保存されるメソッド。
+    //データが反映されたら、画面に変更を表示させて欲しいから@objc必要
+    @objc func saveData() {
+        //inputFieldに入力されていないのに、saveDataが呼び出された場合、この処理を返して終了にするためのguard節。
+        guard let taskTitle = self.inputField.text,
+              !taskTitle.isEmpty else {
+            let alert = UIAlertController(title: "エラー", message: "入力してから保存ボタンを押してください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        let data = Task.create()
+        data.taskName = taskTitle
+        data.insert()
+        let isSuccess = data.save()
+        if isSuccess {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            let alert = UIAlertController(title: "エラー", message: "保存できませんでした。やり直してください。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+        }
        
     }
     

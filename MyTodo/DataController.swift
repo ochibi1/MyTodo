@@ -12,9 +12,8 @@ import CoreData
 class DataController: NSObject {
     //DataControllerのインスタンスをシングルトン（DataControllerのインスタンスはこれだけだよ！の保証）に代入
     static let shared = DataController()
-    
     let container: NSPersistentContainer
-    var context: NSManagedObjectContext = {
+    lazy var context: NSManagedObjectContext = {
         return DataController.shared.container.viewContext
     }()
     
@@ -25,6 +24,10 @@ class DataController: NSObject {
                 fatalError("Failed to load Core Data stack: \(error)")
             }
         }
+    }
+    
+    func fetch<T>(_ request: NSFetchRequest<T>) throws -> [T] {
+        return try self.context.fetch(request)
     }
     
     func create(entityName: String) -> NSEntityDescription {
@@ -45,17 +48,20 @@ class DataController: NSObject {
         }
     }
     
-    func saveContext() {
+    func saveContext() -> Bool {
         if self.context.hasChanges {
             do {
                 try context.save()
             } catch {
                 let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                print("Unresolved error \(nserror), \(nserror.userInfo)")
+                self.context.rollback()
+                return false
             }
         }
+        return true
     }
     
-    // fetch（生成されたManagaed objectの読み込み）はproperties.swiftの方で自動生成されている。
+    // fetchRequest（生成されたManagaed objectの読み込み）はproperties.swiftの方で自動生成されている。
 
 }

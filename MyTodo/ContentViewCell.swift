@@ -35,7 +35,7 @@ class ContentViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(_ text: String) {
-        self.label.text = text
+    func configure(_ task: Task) {
+        self.label.text = task.taskName
     }
 }

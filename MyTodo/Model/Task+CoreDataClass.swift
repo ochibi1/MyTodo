@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 import UIKit
 
-@objc(Task)
-public class Task: NSManagedObject {
-
+public class Task: NSManagedObject, BaseModelProtocol {
+    
 }

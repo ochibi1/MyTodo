@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		0F3BF6AE2553FB75007628D4 /* ContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */; };
 		1BF97F28324D629A6384F8B5 /* Pods_MyTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575B9D85F47D3AAD12381C07 /* Pods_MyTodo.framework */; };
-		58466D8A255CD0F500440E55 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58466D89255CD0F500440E55 /* BaseModel.swift */; };
 		58466D8F255CD28B00440E55 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58466D8E255CD28B00440E55 /* DataController.swift */; };
 		58466D99255CEA9000440E55 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58466D94255CEA9000440E55 /* Task+CoreDataProperties.swift */; };
 		58466D9A255CEA9000440E55 /* TaskStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58466D96255CEA9000440E55 /* TaskStore.xcdatamodeld */; };
 		58466D9B255CEA9000440E55 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58466D98255CEA9000440E55 /* Task+CoreDataClass.swift */; };
+		58466DB0255E2D7600440E55 /* BaseModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58466DAF255E2D7600440E55 /* BaseModelProtocol.swift */; };
 		587FAE432559306500856F9D /* ItemAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FAE422559306500856F9D /* ItemAddViewController.swift */; };
 		588CDA29254908070086D819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA28254908070086D819 /* AppDelegate.swift */; };
 		588CDA2B254908070086D819 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA2A254908070086D819 /* SceneDelegate.swift */; };
@@ -50,11 +50,11 @@
 		46440B50F48A8A89B7E3CA8D /* Pods-MyTodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTodoTests.release.xcconfig"; path = "Target Support Files/Pods-MyTodoTests/Pods-MyTodoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A0BC1E89BE10022E0C192C0 /* Pods_MyTodo_MyTodoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTodo_MyTodoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		575B9D85F47D3AAD12381C07 /* Pods_MyTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		58466D89255CD0F500440E55 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = SOURCE_ROOT; };
 		58466D8E255CD28B00440E55 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		58466D94255CEA9000440E55 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		58466D97255CEA9000440E55 /* TaskStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskStore.xcdatamodel; sourceTree = "<group>"; };
 		58466D98255CEA9000440E55 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		58466DAF255E2D7600440E55 /* BaseModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelProtocol.swift; sourceTree = "<group>"; };
 		587FAE422559306500856F9D /* ItemAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddViewController.swift; sourceTree = "<group>"; };
 		588CDA25254908070086D819 /* MyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		588CDA28254908070086D819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 		588CDA27254908070086D819 /* MyTodo */ = {
 			isa = PBXGroup;
 			children = (
-				58466D89255CD0F500440E55 /* BaseModel.swift */,
+				58466DAF255E2D7600440E55 /* BaseModelProtocol.swift */,
 				58466D8E255CD28B00440E55 /* DataController.swift */,
 				58466D93255CEA9000440E55 /* Model */,
 				588CDA362549080A0086D819 /* Info.plist */,
@@ -457,7 +457,7 @@
 				58F49FC325538EE400986AB8 /* ContentViewController.swift in Sources */,
 				58466D8F255CD28B00440E55 /* DataController.swift in Sources */,
 				0F3BF6AE2553FB75007628D4 /* ContentViewCell.swift in Sources */,
-				58466D8A255CD0F500440E55 /* BaseModel.swift in Sources */,
+				58466DB0255E2D7600440E55 /* BaseModelProtocol.swift in Sources */,
 				58B88049254FC158000756B9 /* (null) in Sources */,
 				587FAE432559306500856F9D /* ItemAddViewController.swift in Sources */,
 				588CDA29254908070086D819 /* AppDelegate.swift in Sources */,
