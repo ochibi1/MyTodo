@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import CoreData
 
 // プロトコルはextensionで下に分けて記述。
 class ContentViewController: UIViewController {

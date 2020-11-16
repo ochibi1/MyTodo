@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import CoreData
 
 class ItemAddViewController: UIViewController {
     let inputField: UITextField! = UITextField(frame: .zero)
@@ -41,6 +40,10 @@ class ItemAddViewController: UIViewController {
     
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //saveBtnを押した時に、CoreDataに保存されるメソッド。
     //データが反映されたら、画面に変更を表示させて欲しいから@objc必要
     @objc func saveData() {
@@ -69,8 +72,5 @@ class ItemAddViewController: UIViewController {
        
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
 }
