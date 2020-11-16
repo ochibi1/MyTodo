@@ -54,7 +54,6 @@ class ContentViewController: UIViewController {
 }
 
 extension ContentViewController: UITableViewDelegate {
-    
 }
 
 extension ContentViewController: UITableViewDataSource {

@@ -10,24 +10,24 @@ import UIKit
 import SnapKit
 
 class ContentViewCell: UITableViewCell {
-    let label: UILabel = UILabel()
+    let label: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        
         self.contentView.addSubview(self.label)
 
         self.label.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.equalTo(20.0)
             make.right.equalToSuperview().inset(20.0)
-            make.height.equalTo(40.0)
+            make.height.greaterThanOrEqualTo(40.0)
+            make.bottom.equalToSuperview()
         }
         
-        self.contentView.snp.makeConstraints { make in
-            make.bottom.equalTo(self.label.snp.bottom)
-            make.top.left.right.equalToSuperview()
-        }
     }
     
     //ビルドに必要だったため記述。
