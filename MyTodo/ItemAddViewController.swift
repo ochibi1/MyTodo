@@ -52,7 +52,6 @@ class ItemAddViewController: UIViewController {
               !taskTitle.isEmpty else {
             let alert = UIAlertController(title: "エラー", message: "入力してから保存ボタンを押してください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) -> Void in
-                print("OK")
             }))
             self.present(alert, animated: true, completion: nil)
             return
