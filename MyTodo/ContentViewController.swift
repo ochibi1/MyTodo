@@ -61,7 +61,16 @@ extension ContentViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContentViewCell
         //「このcell作るときは、必ず（!で指定。認識できなかったらエラーにする役割）ContentViewCellとして作られるものとしますからねー！」と先に記述しているから、ContentViewCellクラスのconfigreメソッド（string型のテキスト）が使えているよー
         cell.configure(self.items[indexPath.row])
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         return cell
+    }
+    
+    // cellが押されたときに呼ばれる関数
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        //セルの選択状態解除
+        tableView.deselectRow(at: indexPath, animated: true)
+        //詳細画面へ推移
+        self.navigationController?.pushViewController(DetailViewController(), animated: true)
     }
 
     // セルの行数を指定
