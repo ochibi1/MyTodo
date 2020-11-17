@@ -71,6 +71,7 @@ extension ContentViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         //詳細画面へ推移
         self.navigationController?.pushViewController(DetailViewController(), animated: true)
+        print(items[indexPath.row])//コンソールでのデータ確認のため残してあります。
     }
 
     // セルの行数を指定
