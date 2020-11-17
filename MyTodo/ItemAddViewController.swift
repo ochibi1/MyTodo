@@ -51,8 +51,7 @@ class ItemAddViewController: UIViewController {
         guard let taskTitle = self.inputField.text,
               !taskTitle.isEmpty else {
             let alert = UIAlertController(title: "エラー", message: "入力してから保存ボタンを押してください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) -> Void in
-            }))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
@@ -64,9 +63,7 @@ class ItemAddViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         } else {
             let alert = UIAlertController(title: "エラー", message: "保存できませんでした。やり直してください。", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) -> Void in
-                print("OK")
-            }))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         }
        
     }
