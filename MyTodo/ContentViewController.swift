@@ -27,10 +27,10 @@ class ContentViewController: UIViewController {
         self.table.register(ContentViewCell.self, forCellReuseIdentifier: "cell")
         self.table.dataSource = self
         self.table.delegate = self
-        self.view.addSubview(table)
+        self.view.addSubview(self.table)
 
         //親クラスのビュー に上下左右合わせるよー
-        table.snp.makeConstraints { make in
+        self.table.snp.makeConstraints { make in
             make.top.left.bottom.right.equalToSuperview()
         }
     }
@@ -51,6 +51,7 @@ class ContentViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 extension ContentViewController: UITableViewDelegate {
@@ -63,9 +64,16 @@ extension ContentViewController: UITableViewDataSource {
         cell.configure(self.items[indexPath.row])
         return cell
     }
-
+    
+    // cellが押されたときに呼ばれる関数
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: false)
+        self.navigationController?.pushViewController(DetailViewController(task: self.items[indexPath.row]), animated: true)
+    }
+    
     // セルの行数を指定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
+    
 }
