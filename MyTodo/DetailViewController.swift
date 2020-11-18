@@ -9,7 +9,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
     let label = UILabel()
-    var recievedText: String = ""
 
     init(task: Task) {
         super.init(nibName: nil, bundle: nil)
@@ -19,7 +18,8 @@ class DetailViewController: UIViewController {
         self.view.backgroundColor = UIColor.lightGray
         print("背景色決めたよ")
         self.view.addSubview(self.label)
-        label.text = recievedText
+        label.text = task.taskName
+        label.backgroundColor = UIColor.white
         
         label.snp.makeConstraints { make in
             make.top.equalTo(150.0)
