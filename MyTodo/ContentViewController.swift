@@ -61,7 +61,6 @@ extension ContentViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContentViewCell
         //「このcell作るときは、必ず（!で指定。認識できなかったらエラーにする役割）ContentViewCellとして作られるものとしますからねー！」と先に記述しているから、ContentViewCellクラスのconfigreメソッド（string型のテキスト）が使えているよー
         cell.configure(self.items[indexPath.row])
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         return cell
     }
     
@@ -69,11 +68,9 @@ extension ContentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let detail = DetailViewController() 
         print("cellが押されたよ")
-        detail.label.text = "選んだセル： \(self.items[indexPath.row])"
-        print("DetailVewControllerのインスタンスのラベルのテキストに、 選んだセルの値代入")
         self.navigationController?.pushViewController(detail, animated: true)
         //セルの選択状態解除
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
         print("セルの選択解除")
         //詳細画面へ推移
         print(items[indexPath.row])//コンソールでのデータ確認のため残してあります。

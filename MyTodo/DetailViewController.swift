@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
         print("タイトル返すよ")
         self.view.backgroundColor = UIColor.lightGray
         print("背景色決めたよ")
-        self.view.addSubview(label)
+        self.view.addSubview(self.label)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -19,6 +19,8 @@ class ContentViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(self.label)
+        
+        self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
 
         self.label.snp.makeConstraints { make in
             make.top.equalToSuperview()
