@@ -20,7 +20,7 @@ class ContentViewCell: UITableViewCell {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(self.label)
         
-        self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        self.accessoryType = .disclosureIndicator
 
         self.label.snp.makeConstraints { make in
             make.top.equalToSuperview()

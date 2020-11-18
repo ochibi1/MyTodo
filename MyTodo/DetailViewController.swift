@@ -18,6 +18,13 @@ class DetailViewController: UIViewController {
         self.view.backgroundColor = UIColor.lightGray
         print("背景色決めたよ")
         self.view.addSubview(self.label)
+        
+        label.snp.makeConstraints { make in
+            make.top.equalTo(150.0)
+            make.height.equalTo(80.0)
+            make.left.equalTo(40.0)
+            make.right.equalToSuperview().inset(40.0)
+        }
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

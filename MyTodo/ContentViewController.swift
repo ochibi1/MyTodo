@@ -27,7 +27,7 @@ class ContentViewController: UIViewController {
         self.table.register(ContentViewCell.self, forCellReuseIdentifier: "cell")
         self.table.dataSource = self
         self.table.delegate = self
-        self.view.addSubview(table)
+        self.view.addSubview(self.table)
 
         //親クラスのビュー に上下左右合わせるよー
         table.snp.makeConstraints { make in
@@ -68,11 +68,9 @@ extension ContentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let detail = DetailViewController() 
         print("cellが押されたよ")
-        self.navigationController?.pushViewController(detail, animated: true)
-        //セルの選択状態解除
+        let selectedCell = tableView.dequeueReusableCell(withIdentifier: "selectedCell", for: indexPath) as! DetailViewController
         tableView.deselectRow(at: indexPath, animated: false)
-        print("セルの選択解除")
-        //詳細画面へ推移
+        self.navigationController?.pushViewController(selectedCell, animated: true)
         print(items[indexPath.row])//コンソールでのデータ確認のため残してあります。
     }
     // セルの行数を指定
