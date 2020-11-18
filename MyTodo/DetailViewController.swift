@@ -12,11 +12,8 @@ class DetailViewController: UIViewController {
 
     init(task: Task) {
         super.init(nibName: nil, bundle: nil)
-        print("Detailのイニシャライザが呼ばれました")
         self.title = "詳細画面"
-        print("タイトル返すよ")
         self.view.backgroundColor = UIColor.lightGray
-        print("背景色決めたよ")
         self.view.addSubview(self.label)
         label.text = task.taskName
         label.backgroundColor = UIColor.white
