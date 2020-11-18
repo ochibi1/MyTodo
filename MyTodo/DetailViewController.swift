@@ -9,13 +9,15 @@ import UIKit
 
 class DetailViewController: UIViewController {
     let label = UILabel()
-    var recievedText: String! = "" //ここにタップされたセルのデータを代入したい
 
     init() {
         super.init(nibName: nil, bundle: nil)
+        print("Detailのイニシャライザが呼ばれました")
         self.title = "詳細画面"
+        print("タイトル返すよ")
         self.view.backgroundColor = UIColor.lightGray
-        label.text = recievedText
+        print("背景色決めたよ")
+        self.view.addSubview(label)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
