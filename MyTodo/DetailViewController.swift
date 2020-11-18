@@ -15,10 +15,10 @@ class DetailViewController: UIViewController {
         self.title = "詳細画面"
         self.view.backgroundColor = UIColor.lightGray
         self.view.addSubview(self.label)
-        label.text = task.taskName
-        label.backgroundColor = UIColor.white
+        self.label.text = task.taskName
+        self.label.backgroundColor = UIColor.white
         
-        label.snp.makeConstraints { make in
+        self.label.snp.makeConstraints { make in
             make.top.equalTo(150.0)
             make.height.equalTo(80.0)
             make.left.equalTo(40.0)

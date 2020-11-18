@@ -30,7 +30,7 @@ class ContentViewController: UIViewController {
         self.view.addSubview(self.table)
 
         //親クラスのビュー に上下左右合わせるよー
-        table.snp.makeConstraints { make in
+        self.table.snp.makeConstraints { make in
             make.top.left.bottom.right.equalToSuperview()
         }
     }
