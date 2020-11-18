@@ -55,6 +55,27 @@ class ContentViewController: UIViewController {
 }
 
 extension ContentViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                print("editingStyleがdelete")//動作確認のため残している(11.18)
+                let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle:  UIAlertController.Style.alert)
+                let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
+                    (action: UIAlertAction!) -> Void in
+                    print("確定")//動作確認のため残している(11.18)
+                })
+                let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+                    (action: UIAlertAction!) -> Void in
+                    print("キャンセル")//動作確認のため残している(11.18)
+                })
+                alert.addAction(cancelAction)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "削除する"
+    }
 }
 
 extension ContentViewController: UITableViewDataSource {
@@ -80,17 +101,4 @@ extension ContentViewController: UITableViewDataSource {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        //deleteを押したら消す前に表示されて欲しい。
-        let alert = UIAlertController(title: "確認", message: "本当に削除してよろしいですか？", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        
-        if editingStyle == .delete {
-            do {
-            self.items.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath] , with: .automatic)
-            }
-        }
-    }
 }
