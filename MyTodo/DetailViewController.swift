@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
             make.right.equalTo(-40.0)
         }
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

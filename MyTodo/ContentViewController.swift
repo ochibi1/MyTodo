@@ -51,6 +51,7 @@ class ContentViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 extension ContentViewController: UITableViewDelegate {
@@ -69,8 +70,10 @@ extension ContentViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         self.navigationController?.pushViewController(DetailViewController(task: self.items[indexPath.row]), animated: true)
     }
+    
     // セルの行数を指定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
+    
 }
