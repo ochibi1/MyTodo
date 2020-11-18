@@ -66,11 +66,9 @@ extension ContentViewController: UITableViewDataSource {
     
     // cellが押されたときに呼ばれる関数
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let detail = DetailViewController() 
         print("cellが押されたよ")
-        let selectedCell = tableView.dequeueReusableCell(withIdentifier: "selectedCell", for: indexPath) as! DetailViewController
         tableView.deselectRow(at: indexPath, animated: false)
-        self.navigationController?.pushViewController(selectedCell, animated: true)
+        self.navigationController?.pushViewController(DetailViewController(task:items[indexPath.row]), animated: true)
         print(items[indexPath.row])//コンソールでのデータ確認のため残してあります。
     }
     // セルの行数を指定
