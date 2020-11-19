@@ -60,11 +60,11 @@ extension ContentViewController: UITableViewDelegate {
                 let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle:  UIAlertController.Style.alert)
                 let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
                     (action: UIAlertAction!) -> Void in
-                        let task = self.items[indexPath.row]
-                        self.items.remove(at: indexPath.row)
-                        self.table.reloadData()
-                        task.delete()
-                        _ = task.save()
+                    let task = self.items[indexPath.row]
+                    self.items.remove(at: indexPath.row)
+                    self.table.reloadData()
+                    task.delete()
+                    _ = task.save()
                 })
                 let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
                     (action: UIAlertAction!) -> Void in

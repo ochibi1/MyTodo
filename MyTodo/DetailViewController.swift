@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
             make.right.equalTo(-40.0)
         }
         
-        self.view.addSubview(deleteBtn)
+        self.view.addSubview(self.deleteBtn)
         self.deleteBtn.snp.makeConstraints { make in
             make.top.equalTo(self.label.snp.bottom).offset(50.0)
             make.height.equalTo(self.label.snp.height)
