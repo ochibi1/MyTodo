@@ -57,11 +57,9 @@ class ContentViewController: UIViewController {
 extension ContentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
-                print("editingStyleがdelete")//動作確認のため残している(11.18)
                 let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle:  UIAlertController.Style.alert)
                 let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
                     (action: UIAlertAction!) -> Void in
-                    print("確定")//動作確認のため残している(11.18)
                     do {
                         let task = self.items[indexPath.row]
                         self.items.remove(at: indexPath.row)
@@ -71,11 +69,9 @@ extension ContentViewController: UITableViewDelegate {
                     }  catch let error as NSError {
                         fatalError("Failed to delete the Task: \(error)")
                     }
-                    print("削除成功")
                 })
                 let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
                     (action: UIAlertAction!) -> Void in
-                    print("キャンセル")//動作確認のため残している(11.18)
                 })
                 alert.addAction(cancelAction)
                 alert.addAction(okAction)
