@@ -8,8 +8,19 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    let label = UILabel()
-    let deleteBtn = UIButton(frame: .zero)
+    let label: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = UIColor.white
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let deleteBtn: UIButton = {
+        let deleteBtn = UIButton(frame: .zero)
+        deleteBtn.setTitle("削除", for: UIControl.State.normal)
+        deleteBtn.backgroundColor = UIColor.red
+        return deleteBtn
+    }()
 
     init(task: Task) {
         super.init(nibName: nil, bundle: nil)
@@ -17,10 +28,6 @@ class DetailViewController: UIViewController {
         self.view.backgroundColor = UIColor.lightGray
         self.view.addSubview(self.label)
         self.label.text = task.taskName
-        self.label.backgroundColor = UIColor.white
-        self.label.textAlignment = .center
-        self.label.frame.size.width += 20
-        self.label.frame.size.width += 10
         
         self.label.snp.makeConstraints { make in
             make.top.equalTo(150.0)
@@ -29,8 +36,6 @@ class DetailViewController: UIViewController {
             make.right.equalTo(-40.0)
         }
         
-        self.deleteBtn.setTitle("削除", for: UIControl.State.normal)
-        self.deleteBtn.backgroundColor = UIColor.red
         self.view.addSubview(deleteBtn)
         self.deleteBtn.snp.makeConstraints { make in
             make.top.equalTo(self.label.snp.bottom).offset(50.0)
