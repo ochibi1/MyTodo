@@ -64,9 +64,8 @@ extension ContentViewController: UITableViewDelegate {
                     print("確定")//動作確認のため残している(11.18)
                     do {
                         self.items[indexPath.row].delete()
+                        self.items.remove(at: indexPath.row)
                         Task().save()
-                        self.items = Task.fetchAll()
-                        self.table.reloadData()
                     }  catch let error as NSError {
                         fatalError("Failed to delete the Task: \(error)")
                     }
