@@ -57,7 +57,7 @@ class ContentViewController: UIViewController {
 extension ContentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
-                let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle:  UIAlertController.Style.alert)
+                let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle: .alert)
                 let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
                     (action: UIAlertAction!) -> Void in
                     let task = self.items[indexPath.row]
@@ -66,7 +66,7 @@ extension ContentViewController: UITableViewDelegate {
                     task.delete()
                     _ = task.save()
                 })
-                let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+                let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler:{
                     (action: UIAlertAction!) -> Void in
                 })
                 alert.addAction(cancelAction)

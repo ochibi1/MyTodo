@@ -10,22 +10,22 @@ import UIKit
 class DetailViewController: UIViewController {
     let label: UILabel = {
         let label = UILabel()
-        label.backgroundColor = UIColor.white
+        label.backgroundColor = .white
         label.textAlignment = .center
         return label
     }()
     
     let deleteBtn: UIButton = {
         let deleteBtn = UIButton(frame: .zero)
-        deleteBtn.setTitle("削除", for: UIControl.State.normal)
-        deleteBtn.backgroundColor = UIColor.red
+        deleteBtn.setTitle("削除", for: .normal)
+        deleteBtn.backgroundColor = .red
         return deleteBtn
     }()
 
     init(task: Task) {
         super.init(nibName: nil, bundle: nil)
         self.title = "詳細画面"
-        self.view.backgroundColor = UIColor.lightGray
+        self.view.backgroundColor = .lightGray
         self.view.addSubview(self.label)
         self.label.text = task.taskName
         
@@ -43,7 +43,7 @@ class DetailViewController: UIViewController {
             make.left.right.equalToSuperview().inset(150.0)
             
         }
-        deleteBtn.addTarget(self, action: #selector(self.deleteData), for: UIControl.Event.touchUpInside)
+        deleteBtn.addTarget(self, action: #selector(self.deleteData), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {

@@ -15,10 +15,10 @@ class ItemAddViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         self.title = "新規項目追加画面"
-        self.view.backgroundColor = UIColor.lightGray
+        self.view.backgroundColor = .lightGray
         
-        self.inputField.borderStyle = UITextField.BorderStyle.roundedRect
-        self.view.addSubview(inputField)
+        self.inputField.borderStyle = .roundedRect
+        self.view.addSubview(self.inputField)
         self.inputField.snp.makeConstraints { make in
             make.top.equalTo(150.0)
             make.height.equalTo(45.0)
@@ -27,16 +27,16 @@ class ItemAddViewController: UIViewController {
         }
         self.inputField.placeholder = "今日のやることを入力"
         
-        self.saveBtn.setTitle("保存", for: UIControl.State.normal)
-        self.saveBtn.backgroundColor = UIColor.green
-        self.view.addSubview(saveBtn)
+        self.saveBtn.setTitle("保存", for: .normal)
+        self.saveBtn.backgroundColor = .green
+        self.view.addSubview(self.saveBtn)
         self.saveBtn.snp.makeConstraints { make in
             make.top.equalTo(self.inputField.snp.bottom).offset(50.0)
             make.height.equalTo(self.inputField.snp.height)
             make.left.right.equalToSuperview().inset(150.0)
             
         }
-        saveBtn.addTarget(self, action: #selector(self.saveData), for: UIControl.Event.touchUpInside)
+        saveBtn.addTarget(self, action: #selector(self.saveData), for: .touchUpInside)
     
     }
     
