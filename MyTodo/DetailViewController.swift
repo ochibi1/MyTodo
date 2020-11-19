@@ -51,11 +51,13 @@ class DetailViewController: UIViewController {
     }
     
     @objc func deleteData() {
-        print("削除ボタンが押されたよ")
-       //削除ボタンを押したら動くメソッド
+        print("削除ボタンが押されたよ")//動作確認用
         let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle: .alert)
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
             (action: UIAlertAction!) -> Void in
+            let selectedCell = self.label.text
+            selectedCell.Task().delete()
+            _ = selectedCell.save()
             print("確定")//動作確認用
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler:{
