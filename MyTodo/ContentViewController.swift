@@ -62,11 +62,10 @@ extension ContentViewController: UITableViewDelegate {
                 let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
                     (action: UIAlertAction!) -> Void in
                     print("確定")//動作確認のため残している(11.18)
-                    let deleteRequest = Task.fetch(offset: Int, limit: Int)
                     do {
-                         let deletedTask = Task.delete(self.items[indexPath.row])
-                             deletedTask.save()
-                         let fetch = Task.fetchAll()
+                        let deletedTask = self.items[indexPath.row].delete()
+                        self.items = Task.fetchAll()
+                        self.table.reloadData()
                     }  catch let error as NSError {
                         fatalError("Failed to delete the Task: \(error)")
                     }
