@@ -18,6 +18,9 @@ class DetailViewController: UIViewController {
         self.view.addSubview(self.label)
         self.label.text = task.taskName
         self.label.backgroundColor = UIColor.white
+        self.label.textAlignment = .center
+        self.label.frame.size.width += 20
+        self.label.frame.size.width += 10
         
         self.label.snp.makeConstraints { make in
             make.top.equalTo(150.0)

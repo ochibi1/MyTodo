@@ -65,10 +65,8 @@ extension ContentViewController: UITableViewDelegate {
                         self.items.remove(at: indexPath.row)
                         self.table.reloadData()
                         task.delete()
-                        task.save()
-                    }  catch let error as NSError {
-                        fatalError("Failed to delete the Task: \(error)")
-                    }
+                        _ = task.save()
+                    } 
                 })
                 let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
                     (action: UIAlertAction!) -> Void in
