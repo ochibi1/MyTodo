@@ -21,19 +21,19 @@ class ItemAddViewController: UIViewController {
         self.view.addSubview(inputField)
         self.inputField.snp.makeConstraints { make in
             make.top.equalTo(150.0)
-            make.height.equalTo(30.0)
+            make.height.equalTo(45.0)
             make.left.equalTo(40.0)
             make.right.equalTo(-40.0)
         }
         self.inputField.placeholder = "今日のやることを入力"
         
         self.saveBtn.setTitle("保存", for: UIControl.State.normal)
-        self.saveBtn.backgroundColor = UIColor.magenta
+        self.saveBtn.backgroundColor = UIColor.green
         self.view.addSubview(saveBtn)
         self.saveBtn.snp.makeConstraints { make in
             make.top.equalTo(self.inputField.snp.bottom).offset(50.0)
             make.height.equalTo(self.inputField.snp.height)
-            make.left.right.equalToSuperview().inset(50.0)
+            make.left.right.equalToSuperview().inset(150.0)
             
         }
         saveBtn.addTarget(self, action: #selector(self.saveData), for: UIControl.Event.touchUpInside)
