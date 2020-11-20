@@ -54,19 +54,15 @@ class DetailViewController: UIViewController {
     }
     
     @objc func deleteData() {
-        print("削除ボタンが押されたよ")//動作確認用
         let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle: .alert)
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
             (action: UIAlertAction!) -> Void in
             self.task.delete()
             _ = self.task.save()
-            print("データ削除成功！")
             self.navigationController?.popViewController(animated: true)
-            print("メイン画面に戻るよ")
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler:{
             (action: UIAlertAction!) -> Void in
-            print("キャンセル")//動作確認用
         })
         alert.addAction(cancelAction)
         alert.addAction(okAction)
