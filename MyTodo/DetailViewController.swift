@@ -21,8 +21,11 @@ class DetailViewController: UIViewController {
         deleteBtn.backgroundColor = .red
         return deleteBtn
     }()
+    
+    let task: Task
 
     init(task: Task) {
+        self.task = task
         super.init(nibName: nil, bundle: nil)
         self.title = "詳細画面"
         self.view.backgroundColor = .lightGray
@@ -50,17 +53,14 @@ class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func deleteData(task: Task) {
+    @objc func deleteData() {
         print("削除ボタンが押されたよ")//動作確認用
         let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle: .alert)
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
             (action: UIAlertAction!) -> Void in
-            let data = task.self
-            data.delete()
-            _ = data.save()
+            self.task.delete()
+            _ = self.task.save()
             print("データ削除成功！")
-//            data.save()
-            print("確定")//動作確認用
             self.navigationController?.popViewController(animated: true)
             print("メイン画面に戻るよ")
         })
