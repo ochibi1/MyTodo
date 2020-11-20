@@ -55,6 +55,29 @@ class ContentViewController: UIViewController {
 }
 
 extension ContentViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle: .alert)
+                let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
+                    (action: UIAlertAction!) -> Void in
+                    let task = self.items[indexPath.row]
+                    self.items.remove(at: indexPath.row)
+                    self.table.reloadData()
+                    task.delete()
+                    _ = task.save()
+                })
+                let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler:{
+                    (action: UIAlertAction!) -> Void in
+                })
+                alert.addAction(cancelAction)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "削除する"
+    }
 }
 
 extension ContentViewController: UITableViewDataSource {
@@ -74,6 +97,10 @@ extension ContentViewController: UITableViewDataSource {
     // セルの行数を指定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
 }
