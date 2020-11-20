@@ -14,6 +14,7 @@
 		58466D9A255CEA9000440E55 /* TaskStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58466D96255CEA9000440E55 /* TaskStore.xcdatamodeld */; };
 		58466D9B255CEA9000440E55 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58466D98255CEA9000440E55 /* Task+CoreDataClass.swift */; };
 		58466DB0255E2D7600440E55 /* BaseModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58466DAF255E2D7600440E55 /* BaseModelProtocol.swift */; };
+		5850051C256782FC00DB86D9 /* ObjcDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850051B256782FC00DB86D9 /* ObjcDetailViewController.m */; };
 		587FAE432559306500856F9D /* ItemAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FAE422559306500856F9D /* ItemAddViewController.swift */; };
 		588CDA29254908070086D819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA28254908070086D819 /* AppDelegate.swift */; };
 		588CDA2B254908070086D819 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588CDA2A254908070086D819 /* SceneDelegate.swift */; };
@@ -56,6 +57,8 @@
 		58466D97255CEA9000440E55 /* TaskStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskStore.xcdatamodel; sourceTree = "<group>"; };
 		58466D98255CEA9000440E55 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		58466DAF255E2D7600440E55 /* BaseModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelProtocol.swift; sourceTree = "<group>"; };
+		5850051A256782FB00DB86D9 /* MyTodo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTodo-Bridging-Header.h"; sourceTree = "<group>"; };
+		5850051B256782FC00DB86D9 /* ObjcDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcDetailViewController.m; sourceTree = "<group>"; };
 		587FAE422559306500856F9D /* ItemAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddViewController.swift; sourceTree = "<group>"; };
 		588CDA25254908070086D819 /* MyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		588CDA28254908070086D819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,12 +161,14 @@
 				588CDA28254908070086D819 /* AppDelegate.swift */,
 				0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */,
 				58F49FC225538EE400986AB8 /* ContentViewController.swift */,
+				5850051B256782FC00DB86D9 /* ObjcDetailViewController.m */,
 				58C48CB3256396520092C947 /* DetailViewController.swift */,
 				587FAE422559306500856F9D /* ItemAddViewController.swift */,
 				588CDA2A254908070086D819 /* SceneDelegate.swift */,
 				588CDA2E2549080A0086D819 /* Assets.xcassets */,
 				588CDA332549080A0086D819 /* LaunchScreen.storyboard */,
 				588CDA302549080A0086D819 /* Preview Content */,
+				5850051A256782FB00DB86D9 /* MyTodo-Bridging-Header.h */,
 			);
 			path = MyTodo;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				TargetAttributes = {
 					588CDA24254908070086D819 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 					588CDA3A2549080A0086D819 = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -457,6 +463,7 @@
 			files = (
 				58466D9A255CEA9000440E55 /* TaskStore.xcdatamodeld in Sources */,
 				58466D9B255CEA9000440E55 /* Task+CoreDataClass.swift in Sources */,
+				5850051C256782FC00DB86D9 /* ObjcDetailViewController.m in Sources */,
 				58F49FC325538EE400986AB8 /* ContentViewController.swift in Sources */,
 				58C48CB4256396520092C947 /* DetailViewController.swift in Sources */,
 				58466D8F255CD28B00440E55 /* DataController.swift in Sources */,
@@ -636,6 +643,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MyTodo/Preview Content\"";
 				DEVELOPMENT_TEAM = 42M5H2NHY3;
@@ -648,6 +656,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.laflora.gmail.MyTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyTodo/MyTodo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -659,6 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MyTodo/Preview Content\"";
 				DEVELOPMENT_TEAM = 42M5H2NHY3;
@@ -671,6 +682,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.laflora.gmail.MyTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyTodo/MyTodo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

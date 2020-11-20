@@ -91,7 +91,7 @@ extension ContentViewController: UITableViewDataSource {
     // cellが押されたときに呼ばれる関数
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: false)
-        self.navigationController?.pushViewController(DetailViewController(task: self.items[indexPath.row]), animated: true)
+        self.navigationController?.pushViewController(ObjcDetailViewController(task: self.items[indexPath.row]), animated: true)
     }
     
     // セルの行数を指定
