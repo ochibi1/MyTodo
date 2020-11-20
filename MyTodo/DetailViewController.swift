@@ -50,14 +50,19 @@ class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func deleteData() {
+    @objc func deleteData(task: Task) {
         print("削除ボタンが押されたよ")//動作確認用
         let alert: UIAlertController = UIAlertController(title: "確認", message:  "本当に削除してよろしいですか？", preferredStyle: .alert)
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
             (action: UIAlertAction!) -> Void in
-            let data = Task().delete(self.label.text)
-            data.save()
+            let data = task.self
+            data.delete()
+            _ = data.save()
+            print("データ削除成功！")
+//            data.save()
             print("確定")//動作確認用
+            self.navigationController?.popViewController(animated: true)
+            print("メイン画面に戻るよ")
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler:{
             (action: UIAlertAction!) -> Void in
