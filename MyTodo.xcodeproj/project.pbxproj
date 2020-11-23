@@ -59,6 +59,7 @@
 		58466DAF255E2D7600440E55 /* BaseModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelProtocol.swift; sourceTree = "<group>"; };
 		5850051A256782FB00DB86D9 /* MyTodo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTodo-Bridging-Header.h"; sourceTree = "<group>"; };
 		5850051B256782FC00DB86D9 /* ObjcDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcDetailViewController.m; sourceTree = "<group>"; };
+		58500520256B913600DB86D9 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		587FAE422559306500856F9D /* ItemAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddViewController.swift; sourceTree = "<group>"; };
 		588CDA25254908070086D819 /* MyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		588CDA28254908070086D819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 				588CDA28254908070086D819 /* AppDelegate.swift */,
 				0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */,
 				58F49FC225538EE400986AB8 /* ContentViewController.swift */,
+				58500520256B913600DB86D9 /* Header.h */,
 				5850051B256782FC00DB86D9 /* ObjcDetailViewController.m */,
 				58C48CB3256396520092C947 /* DetailViewController.swift */,
 				587FAE422559306500856F9D /* ItemAddViewController.swift */,
