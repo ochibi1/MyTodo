@@ -49,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewCell.swift; sourceTree = "<group>"; };
+		0F5954DF2567C6A100FE101B /* ObjcDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcDetailViewController.h; sourceTree = "<group>"; };
 		46440B50F48A8A89B7E3CA8D /* Pods-MyTodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTodoTests.release.xcconfig"; path = "Target Support Files/Pods-MyTodoTests/Pods-MyTodoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A0BC1E89BE10022E0C192C0 /* Pods_MyTodo_MyTodoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTodo_MyTodoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		575B9D85F47D3AAD12381C07 /* Pods_MyTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +162,7 @@
 				588CDA28254908070086D819 /* AppDelegate.swift */,
 				0F3BF6AD2553FB75007628D4 /* ContentViewCell.swift */,
 				58F49FC225538EE400986AB8 /* ContentViewController.swift */,
+				0F5954DF2567C6A100FE101B /* ObjcDetailViewController.h */,
 				5850051B256782FC00DB86D9 /* ObjcDetailViewController.m */,
 				58C48CB3256396520092C947 /* DetailViewController.swift */,
 				587FAE422559306500856F9D /* ItemAddViewController.swift */,
@@ -230,10 +232,10 @@
 			buildConfigurationList = 588CDA4F2549080A0086D819 /* Build configuration list for PBXNativeTarget "MyTodo" */;
 			buildPhases = (
 				7DF107E178FBEFA3F6D8C029 /* [CP] Check Pods Manifest.lock */,
-				588CDA21254908070086D819 /* Sources */,
-				588CDA22254908070086D819 /* Frameworks */,
 				588CDA23254908070086D819 /* Resources */,
+				588CDA22254908070086D819 /* Frameworks */,
 				A897E9A70AD6BB42BBC582AD /* [CP] Embed Pods Frameworks */,
+				588CDA21254908070086D819 /* Sources */,
 			);
 			buildRules = (
 			);
