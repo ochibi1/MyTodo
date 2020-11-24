@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "MyTodo-Bridging-Header.h"
-#import "MyTodo-swift.h"
+#import "MyTodo-Swift.h"
 @interface ObjcDetailViewController : UIViewController
 {
     UILabel *label;

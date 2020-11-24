@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ObjcDetailViewController.h"
 #import "MyTodo-Bridging-Header.h"
-#import "MyTodo-swift.h"
+#import "MyTodo-Swift.h"
 @implementation ObjcDetailViewController
 - (UILabel *)label
 {
@@ -30,6 +30,7 @@
 - (Task *)task
 {
     Task *task = [[Task alloc] init];
+    return task;
 }
 
 @end
