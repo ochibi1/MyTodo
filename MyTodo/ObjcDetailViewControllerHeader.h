@@ -11,7 +11,8 @@
 #import <Foundation/Foundation.h>
 @interface DetailViewController : UIViewController
 {
-    
+    UILabel *label;
+    UIButton *deleteBtn;
 }
 
 #endif /* ObjcDetailViewControllerHeader_h */
