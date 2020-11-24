@@ -8,7 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "ObjcDetailViewController.h"
-#import "Model/Task+CoreDataClass.swift"
+#import "MyTodo-Bridging-Header.h"
+#import "MyTodo-swift.h"
 @implementation ObjcDetailViewController
 - (UILabel *)label
 {
@@ -28,7 +29,7 @@
 
 - (Task *)task
 {
-    Task *task = [[Task allocc] init];
+    Task *task = [[Task alloc] init];
 }
 
 @end

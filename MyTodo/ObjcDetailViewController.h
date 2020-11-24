@@ -10,7 +10,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "Model/Task+CoreDataClass.swift"
+#import "MyTodo-Bridging-Header.h"
+#import "MyTodo-swift.h"
 @interface ObjcDetailViewController : UIViewController
 {
     UILabel *label;
