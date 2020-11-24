@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "ObjcDetailViewControllerHeader.h"
-@implementation DetailViewController
+#import "ObjcDetailViewController.h"
+@implementation ObjcDetailViewController
 - (UILabel *)label
 {
     UILabel *label = [[UILabel alloc]init];
@@ -19,10 +19,10 @@
 
 - (UIButton *)deleteBtn
 {
-    UIButton *deleteBtn = [[UIButton alloc]init];
+    UIButton *deleteBtn = [[UIButton alloc]initWithFrame: CGRectZero];
     deleteBtn.backgroundColor = [UIColor redColor];
-    deleteBtn.frame = UIRectFrame(CGRectZero);
-    
+    [deleteBtn setTitle:@"削除" forState:UIControlStateNormal];
+    return deleteBtn;
 }
 
 @end
