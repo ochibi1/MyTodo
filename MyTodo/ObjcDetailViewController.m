@@ -7,4 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ObjcDetailViewControllerHeader.h"
+@implementation DetailViewController
+
+@end
 
