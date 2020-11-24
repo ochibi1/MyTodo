@@ -10,10 +10,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Model/Task+CoreDataClass.swift"
 @interface ObjcDetailViewController : UIViewController
 {
     UILabel *label;
     UIButton *deleteBtn;
+    Task *task;
 }
 @end
 #endif /* ObjcDetailViewController_h */

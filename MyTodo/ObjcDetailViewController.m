@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "ObjcDetailViewController.h"
+#import "Model/Task+CoreDataClass.swift"
 @implementation ObjcDetailViewController
 - (UILabel *)label
 {
@@ -23,6 +24,11 @@
     deleteBtn.backgroundColor = [UIColor redColor];
     [deleteBtn setTitle:@"削除" forState:UIControlStateNormal];
     return deleteBtn;
+}
+
+- (Task *)task
+{
+    Task *task = [[Task allocc] init];
 }
 
 @end
