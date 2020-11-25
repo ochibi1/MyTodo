@@ -55,8 +55,23 @@
     [self.view addConstraint:hegihtAnchorBtn];
     [self.view addConstraint:leftAnchorBtn];
     [self.view addConstraint:rightAnchorBtn];
+    
+    [deleteBtn addTarget:self action:@selector(self:deleteData:) forControlEvents:UIControlEventTouchUpInside];
     return self;
 }
+
+- (UIAlertController *)alert {
+    UIAlertController * alert = [[UIAlertController alloc]init];
+    [UIAlertController alertControllerWithTitle:@"確認" message:@"本当に削除してよろしいですか？" preferredStyle:UIAlertControllerStyleAlert];
+    return alert;
+}
+    
+- (void)deleteData:(UIButton*)deleteBtn
+{
+
+}
+
+
 
 @end
 

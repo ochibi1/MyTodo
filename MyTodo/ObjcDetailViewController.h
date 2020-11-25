@@ -18,5 +18,7 @@
     Task *task;
 }
 - (instancetype)init;
+- (void)deleteData:(UIButton*)deleteBtn;
+- (UIAlertController*) alert;
 @end
 #endif /* ObjcDetailViewController_h */
