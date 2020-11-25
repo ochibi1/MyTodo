@@ -10,7 +10,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "MyTodo-Bridging-Header.h"
 #import "MyTodo-Swift.h"
 @interface ObjcDetailViewController : UIViewController
 {
@@ -18,5 +17,6 @@
     UIButton *deleteBtn;
     Task *task;
 }
+- (instancetype)init;
 @end
 #endif /* ObjcDetailViewController_h */
