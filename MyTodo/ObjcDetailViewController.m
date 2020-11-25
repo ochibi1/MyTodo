@@ -33,7 +33,7 @@
     
     NSArray<NSLayoutConstraint *> *labelConstraints = @[
         [self.label.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:150.0],
-        [self.label.heightAnchor constraintEqualToAnchor:self.view.heightAnchor constant:45.0],
+        [self.label.heightAnchor constraintEqualToConstant:45.0],
         [self.label.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:40.0],
         [self.label.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-40.0],
     ];
@@ -43,7 +43,7 @@
     NSArray<NSLayoutConstraint *> *deleteBtnConstraints = @[
         [self.deleteBtn.topAnchor constraintEqualToAnchor:self.label.bottomAnchor constant:50.0],
         [self.deleteBtn.heightAnchor constraintEqualToAnchor:self.label.heightAnchor],
-        [self.deleteBtn.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:-150.0],
+        [self.deleteBtn.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:150.0],
         [self.deleteBtn.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-150.0]
     ];
     [self.view addConstraints:deleteBtnConstraints];
