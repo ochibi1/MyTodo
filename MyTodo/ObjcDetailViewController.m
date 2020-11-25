@@ -35,11 +35,11 @@
     [self.view addSubview:label];
     self.label.text = task.taskName;
     
-    NSLayoutConstraint* topAnchor = [label.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:150.0];
-    NSLayoutConstraint* heightAnchor = [label.heightAnchor constraintEqualToAnchor:self.view.heightAnchor constant:45.0];
-    NSLayoutConstraint* leftAnchor = [label.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:40.0];
-    NSLayoutConstraint* rightAnchor = [label.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-40.0];
-    NSLayoutConstraint* bottomAnchor = [label.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:195.0];
+    NSLayoutConstraint* topAnchor = [self.label.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:150.0];
+    NSLayoutConstraint* heightAnchor = [self.label.heightAnchor constraintEqualToAnchor:self.view.heightAnchor constant:45.0];
+    NSLayoutConstraint* leftAnchor = [self.label.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:40.0];
+    NSLayoutConstraint* rightAnchor = [self.label.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-40.0];
+    NSLayoutConstraint* bottomAnchor = [self.label.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:195.0];
     [self.view addConstraint:topAnchor];
     [self.view addConstraint:heightAnchor];
     [self.view addConstraint:leftAnchor];
@@ -47,10 +47,10 @@
     [self.view addConstraint:bottomAnchor];
     
     [self.view addSubview:self.deleteBtn];
-    NSLayoutConstraint* topAnchorBtn = [deleteBtn.topAnchor constraintEqualToAnchor:self.label.bottomAnchor constant:50.0];
-    NSLayoutConstraint* hegihtAnchorBtn = [deleteBtn.heightAnchor constraintEqualToAnchor:self.label.heightAnchor constant:0];
-    NSLayoutConstraint* leftAnchorBtn = [deleteBtn.leftAnchor constraintEqualToAnchor:self.label.leftAnchor constant:-150.0];
-    NSLayoutConstraint* rightAnchorBtn = [deleteBtn.rightAnchor constraintEqualToAnchor:self.label.rightAnchor constant:-150.0];
+    NSLayoutConstraint* topAnchorBtn = [self.deleteBtn.topAnchor constraintEqualToAnchor:self.label.bottomAnchor constant:50.0];
+    NSLayoutConstraint* hegihtAnchorBtn = [self.deleteBtn.heightAnchor constraintEqualToAnchor:self.label.heightAnchor constant:0];
+    NSLayoutConstraint* leftAnchorBtn = [self.deleteBtn.leftAnchor constraintEqualToAnchor:self.label.leftAnchor constant:-150.0];
+    NSLayoutConstraint* rightAnchorBtn = [self.deleteBtn.rightAnchor constraintEqualToAnchor:self.label.rightAnchor constant:-150.0];
     [self.view addConstraint:topAnchorBtn];
     [self.view addConstraint:hegihtAnchorBtn];
     [self.view addConstraint:leftAnchorBtn];
