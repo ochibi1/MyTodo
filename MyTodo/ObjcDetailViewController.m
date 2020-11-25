@@ -36,7 +36,6 @@
         [self.label.heightAnchor constraintEqualToAnchor:self.view.heightAnchor constant:45.0],
         [self.label.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:40.0],
         [self.label.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-40.0],
-        [self.label.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:195.0]
     ];
     
     [self.view addConstraints:labelConstraints];
