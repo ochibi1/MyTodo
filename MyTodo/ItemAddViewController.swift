@@ -90,3 +90,10 @@ class ItemAddViewController: UIViewController {
     
 
 }
+
+extension String {
+    // 半角数字の判定
+    func isAlphanumeric() -> Bool {
+        return self.range(of: "[^0-9]+", options: .regularExpression) == nil && self != ""
+    }
+}
