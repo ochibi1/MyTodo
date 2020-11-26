@@ -21,6 +21,12 @@
     self.label.backgroundColor = UIColor.whiteColor;
     self.label.textAlignment = UIListContentTextAlignmentCenter;
     [self.label setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    self.label.text = String(task.taskNumber);
+    
+    self.label = [UILabel new];
+    self.label.backgroundColor = UIColor.whiteColor;
+    self.label.textAlignment = UIListContentTextAlignmentCenter;
+    [self.label setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.label.text = task.taskName;
     [self.view addSubview:self.label];
     
