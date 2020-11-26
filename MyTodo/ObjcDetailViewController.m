@@ -17,11 +17,12 @@
     
     self.task = task;
     
-    self.label = [UILabel new];
-    self.label.backgroundColor = UIColor.whiteColor;
-    self.label.textAlignment = UIListContentTextAlignmentCenter;
-    [self.label setTranslatesAutoresizingMaskIntoConstraints:NO];
-//    self.label.text = String(task.taskNumber);
+    self.numberLabel = [UILabel new];
+    self.numberLabel.backgroundColor = UIColor.whiteColor;
+    self.numberLabel.textAlignment = UIListContentTextAlignmentCenter;
+    [self.numberLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    self.numberLabel.text = String(task.taskNumber);
+    [self.view addSubview:self.numberLabel];
     
     self.label = [UILabel new];
     self.label.backgroundColor = UIColor.whiteColor;
@@ -37,11 +38,20 @@
     [self.deleteBtn addTarget:self action:@selector(deleteData) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.deleteBtn];
     
+    NSArray<NSLayoutConstraint *> *numberLabelConstraints = @[
+        [self.numberLabel.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:150.0],
+        [self.numberLabel.heightAnchor constraintEqualToConstant:45.0],
+        [self.numberLabel.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:40.0],
+        [self.numberLabel.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-40.0],
+    ];
+    
+    [self.view addConstraints:numberLabelConstraints];
+    
     NSArray<NSLayoutConstraint *> *labelConstraints = @[
-        [self.label.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:150.0],
-        [self.label.heightAnchor constraintEqualToConstant:45.0],
-        [self.label.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:40.0],
-        [self.label.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-40.0],
+        [self.label.topAnchor constraintEqualToAnchor:self.numberLabel.bottomAnchor constant:30.0],
+        [self.label.heightAnchor constraintEqualToAnchor:self.numberLabel.heightAnchor],
+        [self.label.leftAnchor constraintEqualToAnchor:self.numberLabel.leftAnchor],
+        [self.label.rightAnchor constraintEqualToAnchor:self.numberLabel.rightAnchor],
     ];
     
     [self.view addConstraints:labelConstraints];

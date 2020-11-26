@@ -11,6 +11,7 @@
 @interface ObjcDetailViewController: UIViewController
 
 @property UILabel *label;
+@property UILabel *numberLabel;
 @property UIButton *deleteBtn;
 @property Task *task;
 
