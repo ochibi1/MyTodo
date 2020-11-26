@@ -68,7 +68,7 @@ class ItemAddViewController: UIViewController {
             return
         }
         guard let taskPriority: Int = Int(self.numberField.text!)!,
-              !taskPriority = nil else {
+              !(taskPriority == 0) else {
             let alert = UIAlertController(title: "エラー", message: "優先順位の数字を入力してから保存ボタンを押してください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -76,7 +76,7 @@ class ItemAddViewController: UIViewController {
         }
         let data = Task.create()
         data.taskName = taskTitle
-        data.taskNumber = taskPriority
+        data.taskNumber = Int16(taskPriority)
         data.insert()
         let isSuccess = data.save()
         if isSuccess {
