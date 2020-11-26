@@ -6,7 +6,7 @@
 //
 
 import XCTest
-//@testable import MyTodo
+@testable import MyTodo
 
 class MyTodoTests: XCTestCase {
 
