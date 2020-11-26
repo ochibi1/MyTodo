@@ -21,7 +21,7 @@
     self.numberLabel.backgroundColor = UIColor.whiteColor;
     self.numberLabel.textAlignment = UIListContentTextAlignmentCenter;
     [self.numberLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-//    self.numberLabel.text = String(task.taskNumber);
+    self.numberLabel.text = [NSString stringWithFormat:@"%d", task.taskNumber];
     [self.view addSubview:self.numberLabel];
     
     self.label = [UILabel new];
