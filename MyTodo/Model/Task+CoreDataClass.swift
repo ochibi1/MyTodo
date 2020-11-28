@@ -14,7 +14,7 @@ public class Task: NSManagedObject, BaseModelProtocol {
     
     func isNumberValid(_ taskNumber: String) -> Bool {
         
-        return !taskNumber.isEmpty
+        return taskNumber.isEmpty
             && Int16(taskNumber) != nil
             && Int16(taskNumber)! > 0
             && taskNumber == "^[０-９]+"
