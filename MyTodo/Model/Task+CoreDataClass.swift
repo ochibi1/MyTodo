@@ -19,10 +19,21 @@ public class Task: NSManagedObject, BaseModelProtocol {
             && Int16(taskNumber)! > 0
             && taskNumber == "^[０-９]+"
             && taskNumber == "^[A-Z]+"
-        
-        //顔文字のような記号が含まれていないか
-        //16進数の文字列ではないか（これについては、どうやって正規表現とか使うのかイメージ湧いていない）
-
+            && taskNumber == "^(0x)?([0-9a-f]{2,})"
+            && taskNumber.isAppleColorEmoji
     }
     
+}
+
+fileprivate var appleColorEmojiFont = CTFontCreateWithName("AppleColorEmoji" as CFString, 20, nil)
+
+extension String {
+    var isAppleColorEmoji: Bool {
+        let chars = Array(self.utf16)
+        if chars.count == 1 && chars[0] <= 57 { 
+            return false
+        }
+        var glyphs = [CGGlyph](repeating: 0, count: chars.count)
+        return CTFontGetGlyphsForCharacters(appleColorEmojiFont, chars, &glyphs, glyphs.count)
+    }
 }
