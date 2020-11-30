@@ -76,7 +76,7 @@ class ItemAddViewController: UIViewController {
         let data = Task.create()
         Task.isNumberValid(taskNumber: self.numberField.text)
         data.taskName = taskTitle
-        data.taskNumber = Int16(taskPriority)
+        data.taskNumber = taskPriority
         data.insert()
         let isSuccess = data.save()
         if isSuccess {
