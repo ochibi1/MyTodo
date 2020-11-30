@@ -59,8 +59,8 @@
     NSArray<NSLayoutConstraint *> *deleteBtnConstraints = @[
         [self.deleteBtn.topAnchor constraintEqualToAnchor:self.label.bottomAnchor constant:50.0],
         [self.deleteBtn.heightAnchor constraintEqualToAnchor:self.label.heightAnchor],
-        [self.deleteBtn.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:150.0],
-        [self.deleteBtn.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-150.0]
+        [self.deleteBtn.widthAnchor constraintEqualToConstant:70.0],
+        [self.deleteBtn.leftAnchor constraintEqualToAnchor:self.numberLabel.leftAnchor constant:70.0],
     ];
     [self.view addConstraints:deleteBtnConstraints];
     

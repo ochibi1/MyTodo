@@ -28,7 +28,7 @@ class ContentViewCell: UITableViewCell {
         self.numberLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.equalTo(20.0)
-            make.right.equalTo(-300.0)
+            make.width.equalTo(25.0)
             make.height.greaterThanOrEqualTo(40.0)
             make.bottom.equalToSuperview()
         }
