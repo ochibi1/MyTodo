@@ -16,10 +16,7 @@ class ContentViewCell: UITableViewCell {
         return label
     }()
     
-    let numberLabel: UILabel = {
-       let numberLabel = UILabel()
-        return numberLabel
-    }()
+    let numberLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
