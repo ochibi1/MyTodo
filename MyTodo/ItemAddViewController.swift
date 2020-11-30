@@ -66,17 +66,16 @@ class ItemAddViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
             return
         }
-        guard let taskPriority: Int16 = Int16(self.numberField.text!),
-              taskPriority > 0  else {
+        guard let taskPriority = self.numberField.text,
+              Task.isNumberValid(taskNumber: taskPriority) else {
             let alert = UIAlertController(title: "エラー", message: "優先順位の数字を入力してから保存ボタンを押してください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
         let data = Task.create()
-        Task.isNumberValid(taskNumber: self.numberField.text)
         data.taskName = taskTitle
-        data.taskNumber = taskPriority
+        data.taskNumber = Int16(taskPriority)!
         data.insert()
         let isSuccess = data.save()
         if isSuccess {
