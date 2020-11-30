@@ -60,7 +60,7 @@
         [self.deleteBtn.topAnchor constraintEqualToAnchor:self.label.bottomAnchor constant:50.0],
         [self.deleteBtn.heightAnchor constraintEqualToAnchor:self.label.heightAnchor],
         [self.deleteBtn.widthAnchor constraintEqualToConstant:70.0],
-        [self.deleteBtn.leftAnchor constraintEqualToAnchor:self.numberLabel.leftAnchor constant:70.0],
+        [self.deleteBtn.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
     ];
     [self.view addConstraints:deleteBtnConstraints];
     
