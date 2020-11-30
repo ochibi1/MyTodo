@@ -38,7 +38,6 @@ class ItemAddViewController: UIViewController {
         }
         self.inputField.placeholder = "今日のやることを入力"
         
-        
         self.saveBtn.setTitle("保存", for: .normal)
         self.saveBtn.backgroundColor = .green
         self.view.addSubview(self.saveBtn)
@@ -67,14 +66,15 @@ class ItemAddViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
             return
         }
-        guard let taskPriority: Int16 = Int16(self.numberField.text!),
-              (taskPriority > 0) else {
+        guard let taskPriority = Int16(self.numberField.text!),
+              taskPriority > 0  else {
             let alert = UIAlertController(title: "エラー", message: "優先順位の数字を入力してから保存ボタンを押してください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
         let data = Task.create()
+        Task.isNumberValid(taskNumber: self.numberField.text)
         data.taskName = taskTitle
         data.taskNumber = Int16(taskPriority)
         data.insert()
@@ -85,15 +85,5 @@ class ItemAddViewController: UIViewController {
             let alert = UIAlertController(title: "エラー", message: "保存できませんでした。やり直してください。", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         }
-       
-    }
-    
-
-}
-
-extension String {
-    // 半角数字の判定
-    func isAlphanumeric() -> Bool {
-        return self.range(of: "[^0-9]+", options: .regularExpression) == nil && self != ""
     }
 }

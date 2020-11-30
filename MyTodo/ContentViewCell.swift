@@ -18,7 +18,6 @@ class ContentViewCell: UITableViewCell {
     
     let numberLabel: UILabel = {
        let numberLabel = UILabel()
-        numberLabel.numberOfLines = 0
         return numberLabel
     }()
     
