@@ -43,7 +43,8 @@ class DetailViewController: UIViewController {
         self.deleteBtn.snp.makeConstraints { make in
             make.top.equalTo(self.label.snp.bottom).offset(50.0)
             make.height.equalTo(self.label.snp.height)
-            make.left.right.equalToSuperview().inset(150.0)
+            make.width.equalTo(70.0)
+            make.left.equalTo(self.label.snp.left).offset(70.0)
             
         }
         deleteBtn.addTarget(self, action: #selector(self.deleteData), for: .touchUpInside)

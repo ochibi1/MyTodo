@@ -44,7 +44,8 @@ class ItemAddViewController: UIViewController {
         self.saveBtn.snp.makeConstraints { make in
             make.top.equalTo(self.inputField.snp.bottom).offset(50.0)
             make.height.equalTo(self.inputField.snp.height)
-            make.left.right.equalToSuperview().inset(150.0)
+            make.width.equalTo(70.0)
+            make.left.equalTo(self.numberField.snp.left).offset(70.0)
             
         }
         saveBtn.addTarget(self, action: #selector(self.saveData), for: .touchUpInside)
