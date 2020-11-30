@@ -22,7 +22,7 @@ class DataController: NSObject {
         let description = NSPersistentStoreDescription()
         description.shouldMigrateStoreAutomatically = true
         description.shouldInferMappingModelAutomatically = true
-        container.persistentStoreDescriptions = [description]
+        self.container.persistentStoreDescriptions = [description]
         self.container.loadPersistentStores() { (description, error) in
             if let error = error {
                 fatalError("Failed to load Core Data stack: \(error)")

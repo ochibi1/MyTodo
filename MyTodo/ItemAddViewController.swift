@@ -9,8 +9,8 @@ import UIKit
 import SnapKit
 
 class ItemAddViewController: UIViewController {
-    let inputField: UITextField! = UITextField(frame: .zero)
-    let numberField: UITextField! = UITextField(frame: .zero)
+    let inputField = UITextField(frame: .zero)
+    let numberField = UITextField(frame: .zero)
     let saveBtn = UIButton(frame: .zero)
 
     init() {
