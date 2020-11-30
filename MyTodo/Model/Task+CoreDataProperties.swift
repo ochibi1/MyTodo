@@ -17,5 +17,6 @@ extension Task {
     }
 
     @NSManaged public var taskName: String
+    @NSManaged public var taskNumber: Int16
 
 }
