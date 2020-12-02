@@ -29,5 +29,19 @@ class MyTodoTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testTaskNumberIsNotNill() {
+        XCTAssertNotNil(<#T##expression: Any?##Any?#>)
+    }
+    func taskNumberIsNill() {
+        XCTAssertNil(<#T##expression: Any?##Any?#>)
+    }
+    
+    func testTaskNumberIsInt() {
+        XCTAssertTrue(<#T##expression: Bool##Bool#>)
+    }
+    func testTaskNumberIsNotInt() {
+        XCTAssertFalse(<#T##expression: Bool##Bool#>)
+    }
 
 }
