@@ -31,17 +31,50 @@ class MyTodoTests: XCTestCase {
     }
     
     func testTaskNumberIsNotNill() {
-        XCTAssertNotNil(<#T##expression: Any?##Any?#>)
+        XCTAssertTrue(validate(taskNumber: 1234))
     }
-    func taskNumberIsNill() {
-        XCTAssertNil(<#T##expression: Any?##Any?#>)
+    func testTaskNumberIsNill() {
+        XCTAssertFalse(validate(taskNumber: ""))
     }
     
     func testTaskNumberIsInt() {
-        XCTAssertTrue(<#T##expression: Bool##Bool#>)
+        XCTAssertTrue(validate(taskNumber: 5))
     }
     func testTaskNumberIsNotInt() {
-        XCTAssertFalse(<#T##expression: Bool##Bool#>)
+        XCTAssertFalse(validate(taskNumber: "5"))
     }
+    
+    func testTaskNumberIsMinus() {
+        XCTAssertFalse(validate(taskNumber: -123))
+    }
+    
+    func testTaskNumberIsNotMinus() {
+        XCTAssertTrue(validate(taskNumber: 123))
+    }
+    
+    func testTaskNumberIsString() {
+        XCTAssertFalse(validate(taskNumber: "something"))
+    }
+    
+    func testTaskNumberIsNotString() {
+        XCTAssertTrue(validate(taskNumber: 67))
+    }
+    
+    func testTaskNumberIsEmoji() {
+        XCTAssertFalse(validate(taskNumber: ✌️))
+    }
+    
+    func testTaskNumberIsNotEmoji() {
+        XCTAssertTrue(validate(taskNumber: 89))
+    }
+    
+    func testTaskNumberIsHexadecimal() {
+        XCTAssertFalse(validate(taskNumber: 0x11))
+    }
+    
+    func testTaskNumberIsNotHexadecimal() {
+        XCTAssertTrue(validate(taskNumber: 01111))
+    }
+    
 
 }
